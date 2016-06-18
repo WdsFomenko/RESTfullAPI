@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><span>Форма регистрации пользователей</span></div>
+  <form class="form-horizontal" name="registerForm" novalidate>
+    <div class="form-group">
+      <label for="inputEmail5" class="col-sm-2 control-label">Логин</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputEmail5" placeholder="Login" required ng-model="appNs.loginData.username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword6" class="col-sm-2 control-label">Пароль</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword6" placeholder="Password" required ng-model="appNs.loginData.password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword7" class="col-sm-2 control-label">Подтверждение пароля</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword7" placeholder="Password" required ng-model="appNs.checkNewPassword ">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" ng-click="appNs.user.checkNewPassword(appNs.loginData.password, appNs.checkNewPassword) ? appNs.user.setDbUsers() : serviceMessage.showMessage(false, 'Логин или пароль введены не верно!', 'Ошибка авторизации')(false, 'Пароли не совпадают')" ng-disabled="registerForm.$invalid">Зарегистрироваться</button>
+      </div>
+    </div>
+  </form>
+</div>

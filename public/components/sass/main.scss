@@ -1,0 +1,74 @@
+@import "compass" ;
+html{
+  body{
+    .form-control{
+        &.ng-dirty.ng-invalid{
+            outline: 1px solid red;
+            @include box-shadow(0 0 5px red);
+        }
+        &.ng-dirty.ng-valid{
+            outline: 1px solid green;
+            @include box-shadow(0 0 5px green);
+        }
+        &:focus.ng-pristine{
+          outline: #f39c12 solid 1px;
+          &[type='text']{
+            @include box-shadow(0 0 5px #f39c12) ;
+          }
+        }
+      }
+    ul.customUl li{
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    #customersGrid{
+      tr.customer{
+        &:hover{
+          background-color: lightsteelblue;
+          cursor: pointer;
+        }
+        &.activeCustomer{
+          background-color: lightgreen;
+        }
+      }
+    }
+    .statusResponseError{
+      border-color: red;
+      @include box-shadow(0 0 5px red);
+    }
+    .statusResponseSuccess{
+      border-color: green;
+      @include box-shadow(0 0 5px green);
+    }
+    #messageResponse{
+      display: none;
+      position: absolute;
+      top: 20%;
+      left: 40% ;
+      z-index: 2;
+      font-size: 0.8em;
+      width: 30% ;
+      min-height: 130px;
+      padding: 15px 10px 0 10px;
+      color: black;
+      text-align: center;
+      background-color: lightgrey ;
+      border-width: 2px;
+      border-style: solid;
+      @include border-radius(5%);
+      div{
+        &:first-child{
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: inherit;
+          height: 30px;
+        }
+        &:last-child{
+          font-size: 1.1em;
+          padding-top: 40px ;
+        }
+      }
+    }
+  }
+}

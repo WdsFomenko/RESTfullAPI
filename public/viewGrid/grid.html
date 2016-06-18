@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>База данных пользователей системы</h4></div>
+  <table id="customersGrid" class="table table-striped">
+    <tr>
+      <th>Имя пользователя</th>
+      <th>Город проживания</th>
+      <th>Телефон</th>
+    </tr>
+    <tr ng-repeat="items in appNs.dataDbCustomers" class="customer" ng-click="appNs.item.selectItem(items._id, items)" ng-class="(items._id==appNs.currentCustomerIdf)?'activeCustomer':''">
+      <td ng-bind="items.name" ></td>
+      <td ng-bind="items.city"></td>
+      <td ng-bind="items.phone"></td>
+    </tr>
+  </table>
+</div>

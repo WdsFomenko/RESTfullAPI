@@ -1,0 +1,83 @@
+/* line 5, ../sass/main.scss */
+html body .form-control.ng-dirty.ng-invalid {
+  outline: 1px solid red;
+  -moz-box-shadow: 0 0 5px red;
+  -webkit-box-shadow: 0 0 5px red;
+  box-shadow: 0 0 5px red;
+}
+/* line 9, ../sass/main.scss */
+html body .form-control.ng-dirty.ng-valid {
+  outline: 1px solid green;
+  -moz-box-shadow: 0 0 5px green;
+  -webkit-box-shadow: 0 0 5px green;
+  box-shadow: 0 0 5px green;
+}
+/* line 13, ../sass/main.scss */
+html body .form-control:focus.ng-pristine {
+  outline: #f39c12 solid 1px;
+}
+/* line 15, ../sass/main.scss */
+html body .form-control:focus.ng-pristine[type='text'] {
+  -moz-box-shadow: 0 0 5px #f39c12;
+  -webkit-box-shadow: 0 0 5px #f39c12;
+  box-shadow: 0 0 5px #f39c12;
+}
+/* line 21, ../sass/main.scss */
+html body ul.customUl li:hover {
+  cursor: pointer;
+}
+/* line 27, ../sass/main.scss */
+html body #customersGrid tr.customer:hover {
+  background-color: lightsteelblue;
+  cursor: pointer;
+}
+/* line 31, ../sass/main.scss */
+html body #customersGrid tr.customer.activeCustomer {
+  background-color: lightgreen;
+}
+/* line 36, ../sass/main.scss */
+html body .statusResponseError {
+  border-color: red;
+  -moz-box-shadow: 0 0 5px red;
+  -webkit-box-shadow: 0 0 5px red;
+  box-shadow: 0 0 5px red;
+}
+/* line 40, ../sass/main.scss */
+html body .statusResponseSuccess {
+  border-color: green;
+  -moz-box-shadow: 0 0 5px green;
+  -webkit-box-shadow: 0 0 5px green;
+  box-shadow: 0 0 5px green;
+}
+/* line 44, ../sass/main.scss */
+html body #messageResponse {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  z-index: 2;
+  font-size: 0.8em;
+  width: 30%;
+  min-height: 130px;
+  padding: 15px 10px 0 10px;
+  color: black;
+  text-align: center;
+  background-color: lightgrey;
+  border-width: 2px;
+  border-style: solid;
+  -moz-border-radius: 5%;
+  -webkit-border-radius: 5%;
+  border-radius: 5%;
+}
+/* line 61, ../sass/main.scss */
+html body #messageResponse div:first-child {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+  height: 30px;
+}
+/* line 67, ../sass/main.scss */
+html body #messageResponse div:last-child {
+  font-size: 1.1em;
+  padding-top: 40px;
+}

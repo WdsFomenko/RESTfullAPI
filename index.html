@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="components/css/main.css">
+    <link href="components/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <title>CRUD application</title>
+  </head>
+  <body ng-controller="appCtrl">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">
+          <span>Привет </span>
+          <span ng-bind="appNs.currentUserName"></span>
+          <span> !</span>
+        </span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-right" role="search">
+          <button type="submit" class="btn btn-default" ng-click="appNs.direct.directLogin()" ng-hide="appNs.currentUserStatus === 'user'"><span>Войти</span></button>
+          <button type="submit" class="btn btn-default" ng-click="appNs.user.clearCurentUser()" ng-hide="appNs.currentUserStatus !== 'user'"><span>Выйти</span></button>
+          <button type="submit" class="btn btn-default" ng-hide="appNs.currentUserStatus === 'user'"><span ng-click="appNs.direct.directRegister()">Регистрация</span></button>
+        </form>
+        <ul class="nav navbar-nav navbar-left customUl" ng-hide="appNs.currentUserStatus !== 'user'">
+          <li><a ng-click="appNs.direct.directGrid()">Просмотр данных</a></li>
+          <li><a ng-click="appNs.item.resetSelectItem()">Отменить выделение</a></li>
+          <li><a ng-click="appNs.direct.directGridEdit()">Редактировать выделенного</a></li>
+          <li><a ng-click="appNs.data.deleteDbCustomers();">Удалить выделенного</a></li>
+          <li><a ng-click="appNs.user.clearCurrentCustomer(); appNs.direct.directGridEdit()">Создать новую запись</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div ng-view=""></div>
+  <div id="messageResponse" class="statusResponseSuccess">
+    <div>
+      <span id="messageResponseTitle"></span>
+    </div>
+    <div>
+      <span id="messageResponseText"></span>
+    </div>
+  </div>
+    <script src="bower_components/jquery/jquery-1.11.3.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="lib.js"></script>
+    <script src="viewWelcome/welcome.js"></script>
+    <script src="viewRegister/register.js"></script>
+    <script src="viewLogin/login.js"></script>
+    <script src="viewGridEdit/gridedit.js"></script>
+    <script src="viewGrid/grid.js"></script>
+  </body>
+</html>
